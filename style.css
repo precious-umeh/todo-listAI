@@ -1,0 +1,168 @@
+/* --- Root variables for easy theming --- */
+:root {
+  --bg-color: #f4f4f9;
+  --text-color: #333;
+  --note-bg: #fff8a6;
+  --btn-color: #4caf50;
+  --btn-hover: #45a049;
+}
+
+/* --- Dark Mode Variables --- */
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f4f4f9;
+  --note-bg: #444444;
+  --btn-color: #2196f3;
+  --btn-hover: #1976d2;
+}
+
+/* --- General Page Styling --- */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.todo-container {
+  background: transparent;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* --- Input Section --- */
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 12px;
+  border: none;
+  background: var(--btn-color);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: var(--btn-hover);
+}
+
+/* --- Task List --- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: var(--note-bg);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 5px 12px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  transition: transform 0.2s;
+}
+
+li:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+li:hover {
+  transform: scale(1.02) rotate(0deg);
+}
+
+.task-text {
+  flex: 1;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 5px;
+}
+
+.delete-btn {
+  background: crimson;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+.complete-btn {
+  background: #ffa500;
+}
+
+.complete-btn:hover {
+  background: #cc8400;
+}
+
+/* --- Utility Buttons --- */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.clear-btn {
+  background: #ff5252;
+}
+
+.clear-btn:hover {
+  background: #e53935;
+}
+
+.dark-toggle {
+  background: #555;
+}
+
+.dark-toggle:hover {
+  background: #333;
+}
+
+/* --- Responsive for mobile --- */
+@media (max-width: 500px) {
+  .todo-container {
+    max-width: 100%;
+  }
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-group {
+    margin-top: 10px;
+  }
+}
